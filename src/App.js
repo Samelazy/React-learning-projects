@@ -1,25 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
+import { Routes, Route } from 'react-router-dom'
+import { NotFoundPage } from './components/NotFoundPage';
+import { HomePage } from './components/HomePage';
+import { Layout } from './components/Layout';
+import ModalComponent from './components/Modal/ModalComponent';
+import Quiz from './components/Quiz/Quiz';
+import UsersFunction from './components/Users/src/Users';
+import Converter from './components/Converter/Converter';
+import GalleryFunction from './components/Gallery/Gallery';
+import SkeletonComponent from './components/Gallery/Skeleton';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div className="App">
+
+
+			<Routes>
+				<Route path="/" element={<Layout />}>
+					<Route index element={<HomePage />} />
+					<Route path="modal" element={<ModalComponent />} />
+					<Route path="quiz" element={<Quiz />} />
+					<Route path="users" element={<UsersFunction />} />
+					<Route path="converter" element={<Converter />} />
+					<Route path="gallery" element={<GalleryFunction />} />
+					<Route path="*" element={<NotFoundPage />} />
+				</Route>
+			</Routes>
+
+		</div>
+	);
 }
 
 export default App;
