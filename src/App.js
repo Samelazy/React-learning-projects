@@ -5,16 +5,13 @@ import { HomePage } from './components/HomePage';
 import { Layout } from './components/Layout';
 import ModalComponent from './components/Modal/ModalComponent';
 import Quiz from './components/Quiz/Quiz';
-import UsersFunction from './components/Users/src/Users';
+import UsersFunction from './components/Users/Users';
 import Converter from './components/Converter/Converter';
 import GalleryFunction from './components/Gallery/Gallery';
-import SkeletonComponent from './components/Gallery/Skeleton';
 
 function App() {
 	return (
 		<div className="App">
-
-
 			<Routes>
 				<Route path="/" element={<Layout />}>
 					<Route index element={<HomePage />} />
@@ -26,7 +23,6 @@ function App() {
 					<Route path="*" element={<NotFoundPage />} />
 				</Route>
 			</Routes>
-
 		</div>
 	);
 }
